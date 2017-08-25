@@ -6,3 +6,59 @@
 
 //Comenzemos, Primero deberás instalar JDK para posteriormente usar Glassfish.....
 
+Para ello usamos yum install openjdk-7-jdk
+Una ves terminada la instalación, puedes comprobar la versión, usando
+
+java -version
+
+//Ahora vamos a la ruta donde vamos a descargar Glassfish que es en cd /tmp
+//hacemos uso de wget para descargar, quedando de esta manera:
+
+
+wget  http://download.oracle.com/glassfish/4.0/release/glassfish-4.0.zip
+
+//Si necesitas otra versión, la puedes buscar desde http://download.oracle.com/glassfish/4.0/release/
+//una vez este descargada la vamos a descomprimir en el lugar correspondiente qye es /opt, quedando de la siguiente manera:
+
+cd /opt
+sudo unzip /tmp/glassfish-4.0.zip
+
+//una ves descomprimido vamos a crear al usuario que va a administrar a glassfish con 
+
+sudo useradd --system glassfish -d /opt/glassfish4
+//le daremos permiso de escritura y ejecucion, ademas de un grupo
+sudo chown -R glassfish glassfish4
+sudo chgrp -R sudo glassfish4/
+sudo chmod -R +x glassfish4/bin
+sudo chmod -R +x glassfish4/glassfish/bin
+
+cd glassfish4/
+//Ahora vamos a levantar nuestra primera instancia 
+sudo -u glassfish bin/asadmin start-domain domain1
+
+//Una vez levantada, sabemos que lo hace con el puerto 8080 y 4848 para el acceso remoto
+//esto lo podemos confirmar con xxx.xxx.xxx.xx/8080 y xxx.xxx.xxx.xx/4848 
+
+//Si te das cuenta que para el puerto de administración 4848 no está activado el acceso remoto, por lo cual tendrás que hcarlo manualmente
+//desde la consola, primeramente crea la contraeña para el usuario administrador (admin)
+
+sudo -u glassfish bin/asadmin change-admin-password
+
+//lo siguiente que te aparezca, solo dale enter para que enseguida pongas la contraseña de administrador
+//posteriormente usa
+
+sudo -u glassfish bin/asadmin enable-secure-admin
+
+//esto para habilitar el acceso remoto y te pedira la contraseña de admin
+//ahora solo reinicia el servicio, para que efectue los cambios pertinentes con:
+
+sudo -u glassfish bin/asadmin restart-domain domain1
+
+//ahora podrás entrar sin problema a tu direccionip:4848
+
+--------------------------------------------------Crear una segunda instancia----------------------------------------------------
+//Para ellos solo basta con ir a tu directorio 
+
+
+
+
