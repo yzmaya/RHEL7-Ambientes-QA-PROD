@@ -1,0 +1,8 @@
+//Se instalaran dos instancias de Glassfish en el servidor de aplicaciones (Red Hat 7 x64).
+
+
+//Antes de comenzar, si no has utilizado alguna distribución de linux, hoy es el momento para aprenderlo.
+//Deberás saber que para instalar programas en esta distribución necesitaras de wget y yum a traves de subscription-manager register primeramente
+
+//Comenzemos, Primero deberás instalar JDK para posteriormente usar Glassfish.....
+
