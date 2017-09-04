@@ -59,6 +59,8 @@ sudo -u glassfish bin/asadmin restart-domain domain1
 --------------------------------------------------Crear una segunda instancia----------------------------------------------------
 //Para ellos solo basta con ir a tu directorio 
 
+//si necesitas aumentar la memoria de glassfish puedes hacerlo desde el entorno remoto de configuración
+
 
 
 
