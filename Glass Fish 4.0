@@ -35,6 +35,7 @@ sudo chmod -R +x glassfish4/glassfish/bin
 cd glassfish4/
 //Ahora vamos a levantar nuestra primera instancia 
 sudo -u glassfish bin/asadmin start-domain domain1
+la ruta para poder ejecutar a ./asadmin es generalmente en (cd /usr/local/glassfish4/glassfish/bin/)
 
 //Una vez levantada, sabemos que lo hace con el puerto 8080 y 4848 para el acceso remoto
 //esto lo podemos confirmar con xxx.xxx.xxx.xx/8080 y xxx.xxx.xxx.xx/4848 
