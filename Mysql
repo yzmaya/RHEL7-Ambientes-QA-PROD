@@ -134,6 +134,11 @@ Nota: una vez configurada las instancias, ya no podremos acceder a el mediante e
 
 En cambio podemos hacerlo así mysql -uroot -p --perotocol=TCP -P 3301
 
+Para poder conectarte desde otro servidor sería lo mismo pero poniendo en -h la dirección en la que se encuentra alojado la base de datos 
+por ejemplo . -uroot -p -h148.208.127.12 P 3301
+
+Además de que tienes que asegurarte de que los puertos estén escuchando con nmap...
+
 
 Yo una ves hice el proceso me marcaba un error para levantar la instancia 001 copie nuevamente los archivos de mysql que le pertenecen
 a 002 y con eso fue suficiente para mantener las dos instancias encendidas.
