@@ -77,6 +77,22 @@ La información sobre las opciones de este subcomando se incluye en esta página
 
 Escriba un nombre de usuario de administrador y una contraseña para el dominio.
 
+asadmin create-domain --adminport 4848 domain1
+Introduzca el nombre de usuario del administrador [Introduzca para aceptar el valor predeterminado]>
+Uso del puerto 4848 para Admin.
+El puerto predeterminado 8080 para la instancia HTTP está en uso. Utilizando 1161
+Uso del puerto predeterminado 7676 para JMS.
+Uso del puerto predeterminado 3700 para IIOP.
+Uso del puerto predeterminado 8081 para HTTP_SSL.
+Uso del puerto predeterminado 3820 para IIOP_SSL.
+Uso del puerto predeterminado 3920 para IIOP_MUTUALAUTH.
+El puerto predeterminado 8686 para JMX_ADMIN está en uso. Utilizando 1162
+El nombre distintivo del certificado de servidor X.509 autofirmado es:
+[CN = moonbeam.gateway.2wire.net, OU = GlassFish, O = Oracle Corp., L = Redwood Shores, ST
+California, C = US]
+Dominio domain1 creado.
+Comando create-domain ejecutado correctamente.
+
 Para evitar configurar un inicio de sesión de administrador, puede aceptar el administrador predeterminado , sin contraseña. Al pulsar Return también se selecciona el valor predeterminado.
 //si necesitas aumentar la memoria de glassfish puedes hacerlo desde el entorno remoto de configuración
 
