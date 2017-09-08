@@ -60,6 +60,24 @@ sudo -u glassfish bin/asadmin restart-domain domain1
 --------------------------------------------------Crear una segunda instancia----------------------------------------------------
 //Para ellos solo basta con ir a tu directorio 
 
+Después de instalar GlassFish Server y crear el dominio predeterminado ( domain1 ), puede crear dominios adicionales utilizando el create-domainsubcomando local . Este subcomando crea la configuración de un dominio. Cualquier usuario que tenga acceso a la asadminutilidad en un sistema determinado puede crear un dominio y almacenar la configuración del dominio en una carpeta de su elección. De forma predeterminada, la configuración del dominio se crea en el directorio predeterminado de dominios. Puede anular esta ubicación para almacenar la configuración en otro lugar.
+
+Se le requiere especificar un usuario administrativo cuando cree un dominio, o puede aceptar la identidad de inicio de sesión predeterminada que es admin de usuario con contraseña.
+
+Antes de que empieces
+Determine qué perfil se aplicará al dominio.
+
+Seleccione un nombre para el dominio que está creando.
+
+Puede comprobar que un nombre no está ya en uso utilizando el subcomando list-domains (1)
+
+Cree un dominio utilizando el subcomando create-domain (1) .
+
+La información sobre las opciones de este subcomando se incluye en esta página de ayuda.
+
+Escriba un nombre de usuario de administrador y una contraseña para el dominio.
+
+Para evitar configurar un inicio de sesión de administrador, puede aceptar el administrador predeterminado , sin contraseña. Al pulsar Return también se selecciona el valor predeterminado.
 //si necesitas aumentar la memoria de glassfish puedes hacerlo desde el entorno remoto de configuración
 
 
