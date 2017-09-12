@@ -15,3 +15,6 @@ Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory
 file: 3781 Try using the -Djava.io.tmpdir= option to select an alternate temp location.
 
 Espero te sirva
+
+Biblio
+https://stackoverflow.com/questions/14290504/insufficient-space-for-shared-memory-file-when-i-try-to-run-nutch-generate-comma
