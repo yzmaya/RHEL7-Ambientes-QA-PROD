@@ -1,0 +1,17 @@
+//si estás ocupando como s.o Red Hat Linux 7
+//Tienes instalado JAVA SE 7.0U79 o cualquier actualización
+//y estas subiendo los .war por medio de glassfish
+
+Es por que ya la memoria está muy cargada
+Lo que tienes que hacer es ir a cd /tmp
+Marcas un ls, y verás que hay montonal de archivos inservibles
+Borra los que consideres para que no sea un problema
+
+
+Yo me di cuenta haciendo un java -version
+y aparecio:
+
+Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory 
+file: 3781 Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+Espero te sirva
