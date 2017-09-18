@@ -106,6 +106,3 @@ https://ecuadortecnico.wordpress.com/2015/07/16/glassfish-3-1-cambiar-clave-de-u
 Para evitar configurar un inicio de sesión de administrador, puede aceptar el administrador predeterminado , sin contraseña. Al pulsar Return también se selecciona el valor predeterminado.
 //si necesitas aumentar la memoria de glassfish puedes hacerlo desde el entorno remoto de configuración
 
-
-
-
