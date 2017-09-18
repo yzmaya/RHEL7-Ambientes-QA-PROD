@@ -60,9 +60,12 @@ sudo -u glassfish bin/asadmin restart-domain domain1
 --------------------------------------------------Crear una segunda instancia----------------------------------------------------
 //Para ellos solo basta con ir a tu directorio 
 
-Después de instalar GlassFish Server y crear el dominio predeterminado ( domain1 ), puede crear dominios adicionales utilizando el create-domainsubcomando local . Este subcomando crea la configuración de un dominio. Cualquier usuario que tenga acceso a la asadminutilidad en un sistema determinado puede crear un dominio y almacenar la configuración del dominio en una carpeta de su elección. De forma predeterminada, la configuración del dominio se crea en el directorio predeterminado de dominios. Puede anular esta ubicación para almacenar la configuración en otro lugar.
+Después de instalar GlassFish Server y crear el dominio predeterminado ( domain1 ), puede crear dominios adicionales utilizando el 
+create-domainsubcomando local . Este subcomando crea la configuración de un dominio. Cualquier usuario que tenga acceso a la 
+asadminutilidad en un sistema determinado puede crear un dominio y almacenar la configuración del dominio en una carpeta de su elección. De forma predeterminada, la configuración del dominio se crea en el directorio predeterminado de dominios. Puede anular esta ubicación para almacenar la configuración en otro lugar.
 
-Se le requiere especificar un usuario administrativo cuando cree un dominio, o puede aceptar la identidad de inicio de sesión predeterminada que es admin de usuario con contraseña.
+Se le requiere especificar un usuario administrativo cuando cree un dominio, o puede aceptar la identidad de inicio de sesión 
+predeterminada que es admin de usuario con contraseña.
 
 Antes de que empieces
 Determine qué perfil se aplicará al dominio.
@@ -92,6 +95,11 @@ El nombre distintivo del certificado de servidor X.509 autofirmado es:
 California, C = US]
 Dominio domain1 creado.
 Comando create-domain ejecutado correctamente.
+
+Hasta aqui el dominio ya se creó, pero al igual que el anterion, aun no tiene consola de administración web, por lo cual
+esto se tiene que habilitar con el siguiente comando:
+
+enable-secure-admin --port 8484
 
 https://ecuadortecnico.wordpress.com/2015/07/16/glassfish-3-1-cambiar-clave-de-usuario-master-admin/
 
