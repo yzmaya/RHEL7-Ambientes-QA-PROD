@@ -106,3 +106,22 @@ https://ecuadortecnico.wordpress.com/2015/07/16/glassfish-3-1-cambiar-clave-de-u
 Para evitar configurar un inicio de sesión de administrador, puede aceptar el administrador predeterminado , sin contraseña. Al pulsar Return también se selecciona el valor predeterminado.
 //si necesitas aumentar la memoria de glassfish puedes hacerlo desde el entorno remoto de configuración
 
+
+***************************** puertos ******************************
+
+Por defecto el archivo server.xml que vienen en domains/domain 1 o domain2 (depende cuantas instancias tengas)
+
+Si no le indicaste que puerto querias usar para cada instancia, glassfish te da algunos de forma aleatoria.
+
+para saber que puertos son tendrias que ejecutar un netstat -punta (para saber que puertos estan a la escucha)
+Y como no sabes tampoco cuales te asigno tendras que ir a vi glassfish4/glassfish/domains/domain1/config/server.xml
+
+para editar en las etiquetas <server-config> </server-config>
+los puertos de cada uno, son 3. los cuales de arriba hacia abajo son:
+
+1 puerto web (como lo es el 8080)
+2 puerto de seguridad (como es el 8181)
+3 puerto de administración (para montar los .war)
+
+
+
