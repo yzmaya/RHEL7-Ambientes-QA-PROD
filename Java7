@@ -10,6 +10,9 @@ basta con posicionar el cursor sobre el rpm (por que red hat) para que tengas la
 Para esta descarga yo estoy ubicado en /tmp/java
 la cual yo cree
 
+***** recomendable ****
+Se recomienda instalar los programas dentro del directorio /opt ya que en el, la instalación aplica para cualquier usuario del sistema
+
 posteriormente usamos wget para la descarga:
 wget http://download.oracle.com/otn/java/jdk/7u80-b15/jdk-7u80-linux-x64.rpm
 
