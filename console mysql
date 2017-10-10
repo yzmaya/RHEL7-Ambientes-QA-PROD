@@ -1,0 +1,17 @@
+  //esto se usa para ejecutar un script de alguna base de datos y estructura de las tablas 
+  
+  Importar un archivo desde phpmyadmin es algo lento y hay que configurar unos parametros en el php.ini cuando son archivos demasiado grandes, para ahorrarse toda la espera en el navegador recomiendo importar el archivo sql desde la consola de mysql, para esto se debe iniciar sesion desde la consola (Es lo mismo para windows como para linux)
+
+(Iniciamos sesion)
+
+1
+mysql -uUSUARIO -pPASSWORD
+(usamos la bd donde queremos importar el archivo sql, en mi caso es una tabla)
+
+1
+use nombreBasedatos;
+(source es el comando donde se llamara el archivo como parametro y comenzara hacer todo).
+
+1
+source /home/nombreusuario/archivo.sql
+
