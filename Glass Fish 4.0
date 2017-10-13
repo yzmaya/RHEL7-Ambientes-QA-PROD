@@ -124,4 +124,17 @@ los puertos de cada uno, son 3. los cuales de arriba hacia abajo son:
 3 puerto de administración (para montar los .war)
 
 
+----------------------- o------------------------------ java -----------------
+cuestiones de relación con java....
+
+si en algun momento tienes problemas en desplegar la app en glassfish, tal ves un archivo de configuración te esté faltando.
+
+ve a glassfish4/glassfish/config
+y edita con vi asenv.conf
+
+hasta al final del documento hay diferentes variables configuradas.
+añade la siguiente:
+
+AS_JAVA="/usr/java/jdk1.7.0_79" listo y prueba
+
 
