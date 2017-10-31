@@ -6,6 +6,19 @@ si no lo recuerdas, a continucación te dejo los pasos:
 primero se descarga el programa con wget http://repo.mysql.com/mysql57-community-release-el7-7.noarch.rpm
 posteriomente procedemos a la instalación usando, rpm -ivh mysql57-community-release-el7-7.noarch.rpm
 
+luego enciendes mysql 
+systemctl start mysqld
+
+para ver si está bien cargado, usarás
+systemctl status mysqld
+
+posteriormente habilitas la seguridad agregando un password al usuario root
+mysql_enable_installation
+
+para comprobar que la instalación se hizo correctamente, ingresas mysql -uroot -pPASSWORD
+
+si ha sido exito nos salimos de mysql y entonces procedemos a los pasos que vienen:
+
 PASO 1
 Una vez instalado paramos el servicio de mysql usando systemctl mysql stop
 
@@ -44,11 +57,13 @@ Para el tmpdir: /var/lib/mysql/tmp/???
                  
 PASO 3
 
-Copiamos todo el directorio /var/lib/mysql/mysql a cada directorio /var/lib/mysql/???
+Copiamos todo el directorio /var/lib/mysql/mysql a cada directorio /var/lib/mysql/001 y /var/lib/mysql/002
 
 PASO 4
 
 En caso que existan estos ficheros, procedemos a su borrado:
+si no te deja borrar usa rm -rf /var/lib/mysql/mysql
+
 rm /var/lib/mysql/mysql
 rm /var/lib/mysql/ib_logfilex
 rm /var/lib/mysql/ibdata1
@@ -61,7 +76,7 @@ Reasignar dueño de los ficheros y sus permisos correspondientes, el usuario mys
 
 chown -R mysql.mysql /var/lib/mysql
  
-chmod 700 /var/lib/mysql/mysql
+chmod 700 /var/lib/mysql/mysql //si no se puede aplicar este comando, es seguramente por que booraste la carpeta, solo generala con mkdir mysql
 chmod 700 /var/lib/mysql/001
 chmod 700 /var/lib/mysql/002
 chmod 700 /var/lib/mysql/tmp
@@ -71,7 +86,7 @@ PASO 6
 Nos queda editar manualmente el archivo de configuración de MySQL
 
 vim /etc/mysql/my.cnf ó /etc/my.cnf   (en Ubuntu)
-vim /etc/my.cnf   (en openSuSE)
+vim /etc/my.cnf   (en openSuSE y red hat)
 En ésta sección agregamos esto:
 
 [mysqld_multi]
@@ -132,15 +147,29 @@ vim /var/lib/mysql/multilog
 
 Nota: una vez configurada las instancias, ya no podremos acceder a el mediante el comando mysql -u root -p
 
-En cambio podemos hacerlo así mysql -uroot -p --perotocol=TCP -P 3301
+En cambio podemos hacerlo así mysql -uroot -p --protocol=TCP -P 3301
 
 Para poder conectarte desde otro servidor sería lo mismo pero poniendo en -h la dirección en la que se encuentra alojado la base de datos 
-por ejemplo . -uroot -p -h148.208.127.12 P 3301
+por ejemplo . -uroot -p -h192.168.10.12 P 3301
 
 Además de que tienes que asegurarte de que los puertos estén escuchando con nmap...
+yum install nmap
+nmap localhost (te dice que puertos tienes abiertos en tu server)
+y con firewall-cmd --zone=public --add-port=3301/tcp --permanent //estarás abriendo el puerto pero si no tienes habilitado FirewallD te lo va a pedor
+para eso tendrás que habilitaro cion
+
+systemctl enable firewalld
+systemctl start firewalld
+systemctl status firewalld
+
+para realizar los cambios, ejecutas:
+firewall-cmd --reload
+
 
 
 Yo una ves hice el proceso me marcaba un error para levantar la instancia 001 copie nuevamente los archivos de mysql que le pertenecen
 a 002 y con eso fue suficiente para mantener las dos instancias encendidas.
 
+
+Referencias : http://devtroce.com/2010/01/06/configurar-varias-instancias-de-mysql-en-un-mismo-equipo/
 
