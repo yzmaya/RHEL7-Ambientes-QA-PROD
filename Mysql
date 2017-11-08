@@ -13,7 +13,18 @@ para ver si está bien cargado, usarás
 systemctl status mysqld
 
 posteriormente habilitas la seguridad agregando un password al usuario root
-mysql_enable_installation
+
+
+mysql_enable_installa tionuse below command to see the password:
+shell > sudo grep 'temporary password' /var/log/mysqld.log
+
+
+
+(si por alguna razon no te deja habilitar la seguridad de mysql, seguramente es por que mysql asigno una contraseña temporal, y 
+hasta no saberla no podrás entrar.)
+
+para saber que fue lo que asigno, solo hace falta ejecutar lo siguiente:
+
 
 para comprobar que la instalación se hizo correctamente, ingresas mysql -uroot -pPASSWORD
 
