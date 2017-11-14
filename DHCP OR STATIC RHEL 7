@@ -1,0 +1,48 @@
+Si estas montando tu maquina virtual con red hat o centos. por defecto si no le has asignado una ip a la instalación o te encuentras en una
+red con demasiada seguridad, y posiblemente estes usando algun tipo de proxy o acceso limitado en tu red.
+
+Es necesario que conozcas que tienes configurado en tu equipo.
+
+Para saber que ip tiene tu equipo basta con usar ip add show
+
+Te mostrará en su lista dos archivos ifcnfg-lo e ifcnfg-enps03
+
+El que debes editar para indiciarle si tu equipo debe estar con protocolo dhcp o estatica es ifcnfg-enps03 el cual se encuentra en:
+cd /etc/sysconfig/network-scripts/
+
+Una vez que lo hayas abierto con vi o nano. te mostrará lo siguiente:
+
+TYPE=Ethernet
+BOOTPROTO=static ;por que voy a configurar mi ip como estatica si no fuese como dhcp o none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no ; lo cambio a no para que no configure ipv6
+IPV6_AUTOCONF=no ; lo cambio a no, ya que va de la mano de el script anterior
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp0s3
+UUID=b7... ...32a
+ONBOOT=yes; le damos que si, por que si no tendriamos que estarlo prendiendo cada que reiniciiemos el equipo
+HWADDR=08:x:xx:xx:xx:A7
+IPADDR=192.168.10.10; esta es la ip que le voy a asignar
+PREFIX=24; es el valor por defecto
+GATEWAY=192.168.10.1; la puerta de enlace
+DNS1=10.1.23.123; los dns del proveedor de internet
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+
+todo lo que viene comentado anteriormente con ; es por que son los valores que me interesaron a mi cambiar como administrador
+Para recargar el archivo de red sin necesidad de reiniciar, usamos el siguiente comando 
+
+systemctl status network.service
+
+Si tu red contiene un proxy debes de editar el documento yum-conf ubicado en etc/yum.conf
+
+Y agregamos las siguientes lineas en básicamente cualquier parte del documento.
+
+proxy=http://IP_DEL_SERVER_PROXY:PUERTO
+proxy_username=USUARIO
+proxy_password=CONTRASEÑA
+
+
+Con esto seria suficiente para tener acceso a la ed 
