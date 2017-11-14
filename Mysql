@@ -3,8 +3,8 @@
 Primeramente se debe instalar mysql de forma natural, como si fueses a instalar cualquier otro programa.
 si no lo recuerdas, a continucación te dejo los pasos:
 
-primero se descarga el programa con wget http://repo.mysql.com/mysql57-community-release-el7-7.noarch.rpm
-posteriomente procedemos a la instalación usando, rpm -ivh mysql57-community-release-el7-7.noarch.rpm
+primero se descarga el programa con wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+posteriomente procedemos a la instalación usando, rpm -ivh mysql-community-release-el7-5.noarch.rpm
 
 luego enciendes mysql 
 systemctl start mysqld
