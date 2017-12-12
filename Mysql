@@ -3,25 +3,30 @@
 Primeramente se debe instalar mysql de forma natural, como si fueses a instalar cualquier otro programa.
 si no lo recuerdas, a continucación te dejo los pasos:
 
-primero se descarga el programa con wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-posteriomente procedemos a la instalación usando, rpm -ivh mysql-community-release-el7-5.noarch.rpm
+primero se descarga el programa con 
+##wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+posteriomente procedemos a la instalación usando; 
+##rpm -ivh mysql-community-release-el7-5.noarch.rpm
 
 Después tienes que instalar la mas paqueteria de complemento
 
-yum install mysql-server
+##yum install mysql-server
 
 luego enciendes la instancia;
 
-systemctl start mysqld
+##systemctl start mysqld
 
 para ver si está bien cargado, usarás
-systemctl status mysqld
+##systemctl status mysqld
 
 posteriormente habilitas la seguridad agregando un password al usuario root
 
+##mysql_secure_installation
 
-mysql_enable_installa tionuse below command to see the password:
-shell > sudo grep 'temporary password' /var/log/mysqld.log
+
+mysql_enable_installation use below command to see the password:
+#shell > sudo grep 'temporary password' /var/log/mysqld.log
 
 
 
@@ -31,7 +36,7 @@ hasta no saberla no podrás entrar.)
 para saber que fue lo que asigno, solo hace falta ejecutar lo siguiente:
 
 
-para comprobar que la instalación se hizo correctamente, ingresas mysql -uroot -pPASSWORD
+##para comprobar que la instalación se hizo correctamente, ingresas mysql -uroot -pPASSWORD
 
 si ha sido exito nos salimos de mysql y entonces procedemos a los pasos que vienen:
 
