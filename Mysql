@@ -6,7 +6,12 @@ si no lo recuerdas, a continucación te dejo los pasos:
 primero se descarga el programa con wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 posteriomente procedemos a la instalación usando, rpm -ivh mysql-community-release-el7-5.noarch.rpm
 
-luego enciendes mysql 
+Después tienes que instalar la mas paqueteria de complemento
+
+yum install mysql-server
+
+luego enciendes la instancia;
+
 systemctl start mysqld
 
 para ver si está bien cargado, usarás
