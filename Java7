@@ -1,3 +1,18 @@
+********************** TIENES VARIAS VERSIONES DE JAVA, Y QUIERES DEJAR UNA POR DEFECTO ******************************************
+
+USA:  /usr/sbin/alternatives --config java
+
+There are 3 programs which provide 'java'.
+Selection Command
+-----------------------------------------------
+
+1 /usr/lib/jvm/jre-1.6.0-openjdk.x86_64/bin/java
+2 /usr/lib/jvm/jre-1.5.0-gcj/bin/java
+*+ 3 /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number: 1 (AQUI LE DAS EL NUMERO DE LA VERSION QUE QUIERES USAR)
+
+
 Este docunmento te servirá como guia para instalar java 7 en RHEL7 
 
 Para empezar, si te metes a la página de oracle te ofrecerá de la versión 8 en adelante.
